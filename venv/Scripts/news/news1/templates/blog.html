@@ -1,0 +1,13 @@
+<head>
+<!--<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>-->
+<script>window.CKEDITOR_BASEPATH = 'C:\Users\test\PycharmProjects\sonu\venv\Scripts\news\assets\ckeditor';</script>
+
+</head>
+<body>
+{% for blog in blogs %}
+<h2>{{blog.title|safe}} </h2>
+<h3>{{blog.content|safe}} </h3><br>
+
+<img src="{{blog.img.url}}">
+{% endfor %}
+</body>
