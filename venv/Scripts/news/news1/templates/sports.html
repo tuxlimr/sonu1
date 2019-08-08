@@ -1,104 +1,113 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <div class="container">
-
-        <meta http-equiv="refresh" content="30"/>
-      </div>
+    <head>
+        <title>Accordion</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">News</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/news">Headlines</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/entertainment">Cinema</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/news">Technology</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/business">Business</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/sports">Sports</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/news">Blogs</a>
-      </li>
-    
-    </ul>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Headlines</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://127.0.0.1:8000/business">Business</a></li>
+                <li><a href="http://127.0.0.1:8000/technology">Technology</a></li>
+                <li><a href="http://127.0.0.1:8000/sports">Sports</a></li>
+                <li><a href="http://127.0.0.1:8000/entertainment">Cinema</a></li>
+                <li><a href="http://127.0.0.1:8000/blog">Blogs</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
     </div>
 </nav>
 
- 
-      <div class="container">
-      <p spa id="demo"></p>
-          <script>
-            var d = new Date();
-            document.getElementById("demo").innerHTML = d ;
-          </script>
-      </div>
 
-      <div class="container">
-      <h4> Sports </h4>
-      </div>
-
-      <div class="container"><a  href="https://www.firstpost.com/firstcricket/">First Post</a>
-          <p class="thick border-bottom border-gray">
-            {{sports_firstpost}} 
-          </p>
-      </div>
-
-
-      <div class="container"><a  href="https://timesofindia.indiatimes.com/sports">Times Of India </a>
-         <p class="thick border-bottom border-gray">
-          {{sports_toi}}
-         </p>
-      </div>
-
-
-      <div class="container"><a  href="'https://www.espncricinfo.com/">ESPN</a>
-          <p class="thick border-bottom border-gray">
-            {{espn}}
-          </p>
-      </div>
-
-
-      <div class="container"><a href="https://www.cricbuzz.com/">Cricbuzz</a>
-          <p class="thick border-bottom border-gray">
-            {{cricbuzz}}
-          </p>
-      </div>
-
-
-      <div class="container"><a href="https://zeenews.india.com/sports"> Zee News </a>
-          <p class="thick border-bottom border-gray">
-            {{sports_zee}}
-          </p>
-      </div>
-     
- 
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+        <div class="container ">
+            <h1>Sports Headlines</h1>
+            <h3 id="demo" style = "color:blue;text-align: center;" ></h3>
+            <script>
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth()+1)+'-' + today.getFullYear();
+                var time = today.getHours() + ":" + today.getMinutes()
+                var dateTime = date+' '+time;
+                document.getElementById("demo").innerHTML = dateTime;
+                </script>
+                <hr class="style5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline7">
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://www.firstpost.com/firstcricket/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> FirstPost</span></a></div>
+                            <div class="timeline-content">
+                                <p class="description1">
+                                    {{sports_firstpost}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://timesofindia.indiatimes.com/sports"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Times Of India</span></a></div>
+                            <div class="timeline-content">
+                                <p class="description2">
+                                    {{sports_toi}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                             <a href="'https://www.espncricinfo.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> ESPN</span></a></div>
+                            <div class="timeline-content">
+                                <p class="description3">
+                                    {{espn}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://www.cricbuzz.com/""> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Cricbuzz</span></a></div>
+                            <div class="timeline-content">
+                                <p class="description4">
+                                    {{cricbuzz}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://zeenews.india.com/sports"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Zee Sports</span></a></div>
+                            <div class="timeline-content">
+                                <p class="description5">
+                                    {{sports_zee}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<footer>
+  <p>© 2019 News Headline. All rights reserved.</p>
+</footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
 </html>

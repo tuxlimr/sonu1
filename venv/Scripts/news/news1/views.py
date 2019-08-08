@@ -7,12 +7,12 @@ from.models import News
 from .models import Blog
 
 
+# def index(request):
+#     # news_instance = News.objects.create(news_headline='text',newspaper = "NDTV")
+#     return render(request, "index.html")
+
+
 def index(request):
-    # news_instance = News.objects.create(news_headline='text',newspaper = "NDTV")
-    return render(request, "index.html")
-
-
-def news(request):
 
     try:
         try:
