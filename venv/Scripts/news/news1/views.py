@@ -21,7 +21,7 @@ def index(request):
                 page_soup6 = soup(webpage6, "html.parser")
                 containers6 = page_soup6.find("div", {"class": "lhs_col_two"})
                 p6 = containers6.h1.text
-                news_instance = News.objects.create(news_headline=p6,newspaper = "NDTV")
+                # news_instance = News.objects.create(news_headline=p6,newspaper = "NDTV")
         except: return HttpResponse("We are trying to pull info from NDTV Sources ")
 
         try:
@@ -31,7 +31,7 @@ def index(request):
                 containers5 = page_soup5.find("div", {"class": "top-newslist"})
                 p51 = containers5.find("span", {"class": "w_tle"})
                 p5 = p51.text
-                news_instance = News.objects.create(news_headline=p5, newspaper="Times Of India")
+                # news_instance = News.objects.create(news_headline=p5, newspaper="Times Of India")
         except: return HttpResponse("We are trying to pull info from TOI Sources ")
 
         try:
@@ -41,7 +41,7 @@ def index(request):
                 containers4 = page_soup4.find("div", {"class": "featured-story column scroll-box scroll-box-3"})
                 p41 = containers4.find("div", {"class": "row-story"})
                 p4 = p41.h1.text
-                news_instance = News.objects.create(news_headline=p4, newspaper="Scroll")
+                # news_instance = News.objects.create(news_headline=p4, newspaper="Scroll")
         except: return HttpResponse("We are trying to pull info from Scroll Sources ")
 
         try:
@@ -52,7 +52,7 @@ def index(request):
                 for container1 in containers1:
                     Product_container1 = container1.find("div", {"class": "bigstory-h2"})
                     Product_Name1 = Product_container1.text.strip()
-                    news_instance = News.objects.create(news_headline=Product_Name1, newspaper="Hindustan Times")
+                    # news_instance = News.objects.create(news_headline=Product_Name1, newspaper="Hindustan Times")
         except: return HttpResponse("We are trying to pull info from Hindustan Times Sources ")
 
         try:
@@ -63,7 +63,7 @@ def index(request):
                     for container in containers:
                         Product_container = container.find("div", {"class": "overlay-content"})
                         Product_Name = Product_container.text.strip()
-                        news_instance = News.objects.create(news_headline=Product_Name, newspaper="Firstpost")
+                        # news_instance = News.objects.create(news_headline=Product_Name, newspaper="Firstpost")
         except: return HttpResponse("We are trying to pull info from Firstpost Sources ")
 
         try:
@@ -72,7 +72,7 @@ def index(request):
                     page_soup3 = soup(webpage3, "html.parser")
                     containers3 = page_soup3.find("div", {"class": "col-md-12 col-sm-12"})
                     Product_Name3 = containers3.h3.text
-                    news_instance = News.objects.create(news_headline=Product_Name3, newspaper="IndiaToday")
+                    # news_instance = News.objects.create(news_headline=Product_Name3, newspaper="IndiaToday")
         except:return HttpResponse("We are trying to pull info from TOI Sources ")
 
         return render(request, "index.html",
@@ -92,7 +92,7 @@ def sports(request):
                 page_soup = soup(webpage, "html.parser")
                 containers12 = page_soup.find("div", {"class": "first-story"})
                 containers13 = containers12.h1.text.strip()
-                news_instance = News.objects.create(news_headline=containers13, newspaper="Sports-Firstpost")
+                # news_instance = News.objects.create(news_headline=containers13, newspaper="Sports-Firstpost")
             except: return HttpResponse("We are trying to pull info from Sports-Firstpost Sources ")
 
             try:
@@ -102,7 +102,7 @@ def sports(request):
                 containers21 = page_soup2.find("div", {"class": "top-section"})
                 containers22 = containers21.find("span", {"class": "w_tle"})
                 containers23 = containers22.find('a').get("title")
-                news_instance = News.objects.create(news_headline=containers23, newspaper="Sports-TOI")
+                # news_instance = News.objects.create(news_headline=containers23, newspaper="Sports-TOI")
             except: return HttpResponse("We are trying to pull info from Sports-TOI Sources ")
 
 
@@ -112,7 +112,7 @@ def sports(request):
                 page_soup31 = soup(webpage3, "html.parser")
                 containers32 = page_soup31.find("div", {"class": "contentItem__titleWrapper"})
                 containers33 = containers32.h1.text.strip()
-                news_instance = News.objects.create(news_headline=containers33, newspaper="Sports-Cricinfo")
+                # news_instance = News.objects.create(news_headline=containers33, newspaper="Sports-Cricinfo")
             except:return HttpResponse("We are trying to pull info from Sports-Cricinfo Sources ")
 
             try:
@@ -121,7 +121,7 @@ def sports(request):
                 page_soup4 = soup(webpage4, "html.parser")
                 containers41 = page_soup4.find("div", {"class": "big-crd-main cb-bg-white"})
                 containers42 = containers41.h2.text.strip()
-                news_instance = News.objects.create(news_headline=containers42, newspaper="Sports-Cricbuzz")
+                # news_instance = News.objects.create(news_headline=containers42, newspaper="Sports-Cricbuzz")
             except:return HttpResponse("We are trying to pull info from Sports-Cricbuzz Sources ")
 
             try:
@@ -130,7 +130,7 @@ def sports(request):
                 page_soup5 = soup(webpage5, "html.parser")
                 containers51 = page_soup5.find("div", {"class": "left-section"})
                 containers52 = containers51.h3.text.strip()
-                news_instance = News.objects.create(news_headline=containers52, newspaper="Sports-ZeeNews")
+                # news_instance = News.objects.create(news_headline=containers52, newspaper="Sports-ZeeNews")
 
             except: return HttpResponse("We are trying to pull info from Sports-ZeeNews Sources ")
 
@@ -152,7 +152,7 @@ def technology(request):
                 containers1 = page_soup1.find("div", {"class": "td-module-thumb img_height"})
                 p1 = containers1.find("img", {"class": "entry-thumb lazyload"})
                 p11 = p1.get("title")
-                news_instance = News.objects.create(news_headline=p11, newspaper="Tech-91mobiles")
+                # news_instance = News.objects.create(news_headline=p11, newspaper="Tech-91mobiles")
 
             except: return HttpResponse("We are trying to pull info from Tech-91mobiles ")
 
@@ -163,7 +163,7 @@ def technology(request):
                 containers51 = page_soup5.find("div", {"class": "col-12"})
                 p52 = containers51.find("div", {"section": "topStories|item-1"})
                 p53 = p52.h3.text.strip()
-                news_instance = News.objects.create(news_headline=p53, newspaper="Tech-CNET")
+                # news_instance = News.objects.create(news_headline=p53, newspaper="Tech-CNET")
 
             except: return HttpResponse("We are trying to pull info from Tech-CNET ")
 
@@ -174,7 +174,7 @@ def technology(request):
                 containers2 = page_soup2.find("div", {"class": "story_list row margin_b30"})
                 p21 = containers2.find("span", {"class": "news_listing"})
                 p22 = p21.text.strip()
-                news_instance = News.objects.create(news_headline=p22, newspaper="Tech-NDTVgadgets")
+                # news_instance = News.objects.create(news_headline=p22, newspaper="Tech-NDTVgadgets")
 
             except: return HttpResponse("We are trying to pull info from Tech-NDTVgadgets ")
 
@@ -185,7 +185,7 @@ def technology(request):
                 containers4 = page_soup4.find("div", {"class": "l-col__main"})
                 p4 = containers4.find("div", {"class": "c-entry-box--compact__body"})
                 p41 = p4.h2.text.strip()
-                news_instance = News.objects.create(news_headline=p41, newspaper="Tech-Verge")
+                # news_instance = News.objects.create(news_headline=p41, newspaper="Tech-Verge")
 
             except: return HttpResponse("We are trying to pull info from Tech-Verge ")
 
@@ -196,7 +196,7 @@ def technology(request):
                 containers3 = page_soup3.find("div", {"id": "Item1"})
                 p3 = containers3.find("figure", {"class": "feature-block-item"})
                 p31 = p3.find("span", {"class": "article-name"}).text.strip()
-                news_instance = News.objects.create(news_headline=p31, newspaper="Tech-Techradar")
+                # news_instance = News.objects.create(news_headline=p31, newspaper="Tech-Techradar")
             except: return HttpResponse("We are trying to pull info from Tech-Techradar ")
 
 
@@ -219,7 +219,7 @@ def entertainment(request):
                 containers1 = page_soup1.find("div", {"class": "main-content"})
                 p1 = containers1.find("h2", {"class": "main-title"})
                 p12 = p1.text.strip()
-                news_instance = News.objects.create(news_headline=p12, newspaper="Ent_firstpost")
+                # news_instance = News.objects.create(news_headline=p12, newspaper="Ent_firstpost")
             except: return HttpResponse("We are trying to pull info from firstpost")
 
             try:
@@ -229,7 +229,7 @@ def entertainment(request):
                 containers2 = page_soup2.find("div", {"class": "area wrap-left"})
                 p2 = containers2.find("h2", {"class": "headline-main"})
                 p21 = p2.text.strip()
-                news_instance = News.objects.create(news_headline=p21, newspaper="Ent_IBTimes")
+                # news_instance = News.objects.create(news_headline=p21, newspaper="Ent_IBTimes")
             except: return HttpResponse("We are trying to pull info from IBTimes ")
 
             try:
@@ -238,7 +238,7 @@ def entertainment(request):
                 page_soup3 = soup(webpage3, "html.parser")
                 containers3 = page_soup3.find("div", {"class": "col-md-8"})
                 p31 = containers3.h2.text.strip()
-                news_instance = News.objects.create(news_headline=p31, newspaper="Ent_Indiatoday")
+                # news_instance = News.objects.create(news_headline=p31, newspaper="Ent_Indiatoday")
             except: return HttpResponse("We are trying to pull info from Indiatoday ")
 
             try:
@@ -248,7 +248,7 @@ def entertainment(request):
                 containers4 = page_soup4.find("div", {"class": "ins_left_rhs"})
                 p4 = containers4.find("div", {"class": "nstory_header"})
                 p41 = p4.text.strip()
-                news_instance = News.objects.create(news_headline= p41, newspaper="Ent_NDTV")
+                # news_instance = News.objects.create(news_headline= p41, newspaper="Ent_NDTV")
             except: return HttpResponse("We are trying to pull info from NDTV ")
 
             try:
@@ -258,7 +258,7 @@ def entertainment(request):
                 containers5 = page_soup5.find("div", {"class": "view-content"})
                 p5 = containers5.find("a", {"class": "section-title"})
                 p51 = p5.text.strip()
-                news_instance = News.objects.create(news_headline=p51, newspaper="Ent_pinkvilla")
+                # news_instance = News.objects.create(news_headline=p51, newspaper="Ent_pinkvilla")
             except: return HttpResponse("We are trying to pull info from pinkvilla ")
 
                 
