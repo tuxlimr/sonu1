@@ -1,38 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+.scrolling table {
+    table-layout: inherit;
+    width: 100%
+ *margin-left: -100px;/*ie7*/
+}
+.scrolling td, th:hover {
+    vertical-align: top;
+  padding: 10px;
+  min-width: 100px;
+  background-color: #337ab7;
+  color: white;
+}
+
+td:hover{
+  background-color: white;
+  color: #337ab7;
+}
+
+.scrolling th {
+  position: absolute;
+ *position: relative; /*ie7*/
+  left: 0;
+  width: 120px;
+}
+.outer {
+  position: relative
+}
+.inner {
+  overflow: auto;
+  /*overflow-y: visible;*/
+  margin-left: 120px;
+/*  color: blue;
+  background-color: white;*/
+}
+
+.table {
+  background-color: white;
+  color: #337ab7;
+}
+</style>
+
+<div class="container"
+        <div class="row">
+              <div class="scrolling outer">
+                <div class="inner">
+                  <table class="table table-striped table-hover table-condensed">
+                    <tr>
+                      <th>Currency:</th>
+                      <td>INR</td>
+                      <td>USD</td>
+                      <td>GBP</td>
+                      <td>AUD</td>
+                      <td>CAD</td>
+                      <td>RUB</td>
+                      <td>SGD</td>
+
+                    </tr>
+
+                     <tr>
+                      <th> 1 EURO</th>
+                      <td>{{INR}}</td>
+                      <td>{{USD}}</td>
+                      <td>{{GBP}}</td>
+                      <td>{{AUD}}</td>
+                      <td>{{CAD}}</td>
+                      <td>{{RUB}}</td>
+                      <td>{{SGD}}</td>
+                    </tr>
+                  <!--     <tr>
+                      <th>USD</th>
+                      <td>23</td>
+                      <td>23</td>
+                      <td>32</td>
+                      <td>33</td>
+                      <td>33</td>
+                      <td>33</td>
+                    </tr> -->
+
+
+                  </table>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

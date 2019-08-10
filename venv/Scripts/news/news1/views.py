@@ -5,7 +5,9 @@ from urllib.request import Request, urlopen
 import datetime
 from.models import News
 from .models import Blog
-
+import requests
+import json
+cuurency_url = requests.get('https://api.ratesapi.io/api/latest')
 
 # def index(request):
 #     # news_instance = News.objects.create(news_headline='text',newspaper = "NDTV")
@@ -311,8 +313,43 @@ def business(request):
                        "bizz_business": containers41})
     except:return HttpResponse(" We are in the maintenance mode")
 
+def currency(request):
+    try:
+        currency = json.loads(cuurency_url.text)
+        GBP = str(currency['rates']['GBP'])
+        HKD = str(currency['rates']['HKD'])
+        INR = str(currency['rates']['INR'])
+        SGD = str(currency['rates']['SGD'])
+        CNY = str(currency['rates']['CNY'])
+        USD = str(currency['rates']['USD'])
+        AUD = str(currency['rates']['AUD'])
+        CAD = str(currency['rates']['CAD'])
+        MYR = str(currency['rates']['MYR'])
+        BGN = str(currency['rates']['BGN'])
+        THB = str(currency['rates']['THB'])
+        PHP = str(currency['rates']['PHP'])
+        RUB = str(currency['rates']['RUB'])
+
+        return render(request, 'currency.html',
+                      {'GBP': GBP,
+                        "HKD" : HKD,
+                        "INR": INR,
+                        "SGD": SGD,
+                        "CNY": CNY,
+                        "USD": USD,
+                        "AUD": AUD,
+                        "CAD": CAD,
+                        "MYR": MYR,
+                        "BGN": BGN,
+                        "THB": THB,
+                        "PHP": PHP,
+                        "RUB": RUB})
+
+    except: return HttpResponse(" We are trying to fetch currency rates")
+
 def blog(request):
     blogs = Blog.objects.all()
     return render(request, 'blog.html', {'blogs': blogs})
+
 
 

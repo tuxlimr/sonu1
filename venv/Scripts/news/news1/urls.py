@@ -10,5 +10,6 @@ urlpatterns = [
     path('business', views.business, name='business'),
     path('entertainment', views.entertainment, name='entertainment'),
     path('blog', views.blog, name='blog'),
+    path('currency', views.currency, name='currency'),
     # path(r'^ckeditor/', include('ckeditor.urls')),
 ]
