@@ -2,7 +2,7 @@ import requests
 import json
 
 # def currency1(a):
-cuurency_url = requests.get('https://api.ratesapi.io/api/latest')
+cuurency_url = requests.get('https://api.ratesapi.io/api/2015-01-1')
 currency12 = json.loads(cuurency_url.text)
 GBP = str(currency12['rates']['GBP'])
 HKD = str(currency12['rates']['HKD'])
