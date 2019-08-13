@@ -1,114 +1,13 @@
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Accordion</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    </head>
-    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+{% for blog in pinkvilla %}
+<h2>{{blog.PinkVilla|safe}} </h2>
+
+{% endfor %}
+
+<!--{% for blog in blogs %}-->
+<!--<h2>{{blog.title|safe}} </h2>-->
+<!--{% endfor %}-->
 
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Headlines</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="http://127.0.0.1:8000/business">Business</a></li>
-                <li><a href="http://127.0.0.1:8000/technology">Technology</a></li>
-                <li><a href="http://127.0.0.1:8000/sports">Sports</a></li>
-                <li><a href="http://127.0.0.1:8000/entertainment">Cinema</a></li>
-                <li><a href="http://127.0.0.1:8000/blog">Blogs</a></li>
-            </ul>
-
-        </div><!-- /.navbar-collapse -->
-    </div>
-</nav>
 
 
-        <div class="container ">
-            <h1>Cinema Headlines</h1>
-            <h3 id="demo" style = "color:blue;text-align: center;" ></h3>
-            <script>
-                var today = new Date();
-                var date = today.getDate() + '-' + (today.getMonth()+1)+'-' + today.getFullYear();
-                var time = today.getHours() + ":" + today.getMinutes()
-                var dateTime = date+' '+time;
-                document.getElementById("demo").innerHTML = dateTime;
-                </script>
-                <hr class="style5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-timeline7">
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href="https://www.firstpost.com/category/entertainment"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> FirstPost</span></a></div>
-                            <div class="timeline-content">
-                                <p class="description1">
-                                    {{ent_firstpost}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                                <a href="https://www.ibtimes.co.in/entertainment"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> IBTimes/span></span></a></div>
-                            <div class="timeline-content">
-                                <p class="description2">
-                                    {{ent_ibtimes}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                             <a href="https://www.indiatoday.in/movies"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> IndiaToday</span></a></div>
-                            <div class="timeline-content">
-                                <p class="description3">
-                                    {{ent_indiatoday}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href="'https://www.ndtv.com/entertainment/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> NDTV</span></a></div>
-                            <div class="timeline-content">
-                                <p class="description4">
-                                    {{ent_ndtv}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href="https://www.pinkvilla.com/entertainment"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> PinkVilla</span></a></div>
-                            <div class="timeline-content">
-                                <p class="description5">
-                                    {{ent_pinkvilla}}
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-<footer>
-  <p>© 2019 News Headline. All rights reserved.</p>
-</footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </body>
-</html>
