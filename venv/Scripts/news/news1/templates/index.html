@@ -19,9 +19,10 @@
                             <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
                             <a href="https://scroll.in/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Scroll.in</span></a></div>
                             <div class="timeline-content">
-                                <!-- <h5 class="title">Web Desginer</h5> -->
                                 <p class="description1">
-                                    {{scroll}}
+                                    {% for blog in scroll%}
+                                    {{blog.scroll|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -29,9 +30,10 @@
                             <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
                             <a href="https://www.indiatoday.in/news.html"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> IndiaToday</span></a></div>
                             <div class="timeline-content">
-                                <!-- <h5 class="title">Web Developer</h5> -->
                                 <p class="description2">
-                                    {{itoday}}
+                                    {% for blog in itoday%}
+                                    {{blog.IndiaToday|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -39,9 +41,10 @@
                             <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
                              <a href="https://www.hindustantimes.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Hindustan Times</span></a></div>
                             <div class="timeline-content">
-                                <!-- <h5 class="title">Web Desginer</h5> -->
                                 <p class="description3">
-                                    {{htnews}}
+                                    {% for blog in htnews%}
+                                    {{blog.HindustanTimes|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -50,7 +53,9 @@
                             <a href="https://www.firstpost.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Firstpost</span></a></div>
                             <div class="timeline-content">
                                 <p class="description4">
-                                    {{firstpostnews}}
+                                    {% for blog in firstpostnews%}
+                                    {{blog.Firstpost|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -59,7 +64,9 @@
                             <a href="https://timesofindia.indiatimes.com/home/headlines"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Times Of India</span></a></div>
                             <div class="timeline-content">
                                 <p class="description5">
-                                    {{TOI}}
+                                    {% for blog in TOI%}
+                                    {{blog.Toi|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -68,7 +75,9 @@
                             <a href="https://www.ndtv.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> NDTV</span></a></div>
                             <div class="timeline-content">
                                 <p class="description6">
-                                    {{NDTV}}
+                                    {% for blog in NDTV%}
+                                    {{blog.NDTV|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>

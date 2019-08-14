@@ -21,7 +21,9 @@
                             <a href="https://www.91mobiles.com/hub/category/news-2/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> 91 Mobiles</span></a></div>
                             <div class="timeline-content">
                                 <p class="description1">
-                                    {{91mobiles}}
+                                    {% for blog in 91mobiles%}
+                                         {{blog.Mobiles91|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -30,7 +32,9 @@
                             <a href="https://www.cnet.com/news/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> CNET </span></a></div>
                             <div class="timeline-content">
                                 <p class="description2">
-                                    {{tech_cnet}}
+                                    {% for blog in tech_cnet %}
+                                            {{blog.CNET|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -39,7 +43,9 @@
                              <a  href="https://gadgets.ndtv.com/news"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> NDTV </span></a></div>
                             <div class="timeline-content">
                                 <p class="description3">
-                                    {{tech_ndtv}}
+                                    {% for blog in tech_ndtv %}
+                                        {{blog.NDTV|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -48,7 +54,9 @@
                             <a href = "https://www.theverge.com/tech"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Verge </span></a></div>
                             <div class="timeline-content">
                                 <p class="description4">
-                                    {{tech_verge}}
+                                    {% for blog in tech_verge %}
+                                        {{blog.Verge|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -57,8 +65,9 @@
                             <a href= "https://www.techradar.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Tech Radar </span></a></div>
                             <div class="timeline-content">
                                 <p class="description4">
-                                    {{techradar}}
-                                </p>
+                                    {% for blog in techradar %}
+                                        {{blog.TechRadar|safe}}
+                                    {% endfor %}
                             </div>
                         </div>
 
@@ -66,10 +75,5 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
 
 {% endblock %}

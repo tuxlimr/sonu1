@@ -20,7 +20,9 @@
                             <a href="https://www.firstpost.com/firstcricket/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> FirstPost</span></a></div>
                             <div class="timeline-content">
                                 <p class="description1">
-                                    {{sports_firstpost}}
+                                {% for blog in sports_firstpost%}
+                                    {{blog.FirstPost|safe}}
+                                {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -29,7 +31,9 @@
                             <a href="https://timesofindia.indiatimes.com/sports"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Times Of India</span></a></div>
                             <div class="timeline-content">
                                 <p class="description2">
-                                    {{sports_toi}}
+                                    {% for blog in sports_toi%}
+                                        {{blog.Toi|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -38,7 +42,9 @@
                              <a href="'https://www.espncricinfo.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> ESPN</span></a></div>
                             <div class="timeline-content">
                                 <p class="description3">
-                                    {{espn}}
+                                    {% for blog in espn%}
+                                        {{blog.ESPN|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -47,7 +53,9 @@
                             <a href="https://www.cricbuzz.com/""> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Cricbuzz</span></a></div>
                             <div class="timeline-content">
                                 <p class="description4">
-                                    {{cricbuzz}}
+                                    {% for blog in cricbuzz%}
+                                        {{blog.Cricbuzz|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
@@ -56,7 +64,9 @@
                             <a href="https://zeenews.india.com/sports"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Zee Sports</span></a></div>
                             <div class="timeline-content">
                                 <p class="description5">
-                                    {{sports_zee}}
+                                    {% for blog in sports_zee%}
+                                        {{blog.ZeeSports|safe}}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
