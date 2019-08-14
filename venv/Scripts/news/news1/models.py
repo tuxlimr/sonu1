@@ -22,7 +22,7 @@ class NewsHeadlines (models.Model):
 class BusinessHeadlines (models.Model):
 
     EconomicTimes = models.CharField(max_length=300)
-    MoneyConrol = models.CharField(max_length=300)
+    MoneyControl = models.CharField(max_length=300)
     LiveMint= models.CharField(max_length=300)
     BusinessStandard= models.CharField(max_length=300)
     news_time = models.DateTimeField(auto_now_add=True)

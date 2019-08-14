@@ -1,69 +1,67 @@
-<!--{% extends "base.html" %}-->
-<!--{% load static %}-->
-<!--{% block content %}-->
-<!--<div class="container ">-->
-<!--            <h1>Business Headlines</h1>-->
-<!--            <h3 id="demo" style = "color:blue;text-align: center;" ></h3>-->
-<!--            <script>-->
-<!--                var today = new Date();-->
-<!--                var date = today.getDate() + '-' + (today.getMonth()+1)+'-' + today.getFullYear();-->
-<!--                var time = today.getHours() + ":" + today.getMinutes()-->
-<!--                var dateTime = date+' '+time;-->
-<!--                document.getElementById("demo").innerHTML = dateTime;-->
-<!--                </script>-->
-<!--                <hr class="style5">-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-12">-->
-<!--                    <div class="main-timeline7">-->
-<!--                        <div class="timeline">-->
-<!--                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>-->
-<!--                            <a href="https://economictimes.indiatimes.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Economic Times </span></a></div>-->
-<!--                            <div class="timeline-content">-->
-<!--                                <p class="description2">-->
-<!--                                    {% for blog in bizz_eco%}-->
-<!--                                    {{blog.EconomicTimes|safe}}-->
-<!--                                    {% endfor %}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="timeline">-->
-<!--                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>-->
-<!--                             <a href="https://www.moneycontrol.com/">  <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Money Control </span></a></div>-->
-<!--                            <div class="timeline-content">-->
-<!--                                <p class="description3">-->
-<!--                                    {% for blog in bizz_money%}-->
-<!--                                    {{blog.MoneyControl|safe}}-->
-<!--                                    {% endfor %}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="timeline">-->
-<!--                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>-->
-<!--                            <a href="https://www.livemint.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> LiveMint </span></a></div>-->
-<!--                            <div class="timeline-content">-->
-<!--                                <p class="description4">-->
-<!--                                    {% for blog in bizz_livemint%}-->
-<!--                                    {{blog.LiveMint|safe}}-->
-<!--                                    {% endfor %}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="timeline">-->
-<!--                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>-->
-<!--                            <a href="https://www.business-standard.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Business Standard </span></a></div>-->
-<!--                            <div class="timeline-content">-->
-<!--                                <p class="description4">-->
-<!--                                    {% for blog in bizz_business%}-->
-<!--                                    {{blog.BusinessStandard|safe}}-->
-<!--                                    {% endfor %}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container ">
+            <h1>Business Headlines</h1>
+            <h3 id="demo" style = "color:blue;text-align: center;" ></h3>
+            <script>
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth()+1)+'-' + today.getFullYear();
+                var time = today.getHours() + ":" + today.getMinutes()
+                var dateTime = date+' '+time;
+                document.getElementById("demo").innerHTML = dateTime;
+            </script>
+                <hr class="style5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline7">
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://economictimes.indiatimes.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Economic Times </span></a></div>
+                            <div class="timeline-content">
+                                <p class="description2">
+                                    {% for blog in bizz_eco%}
+                                    {{blog.EconomicTimes|safe}}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                             <a href="https://www.moneycontrol.com/">  <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Money Control </span></a></div>
+                            <div class="timeline-content">
+                                <p class="description3">
+                                    {% for blog in bizz_money %}
+                                    {{blog.MoneyControl|safe}}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://www.livemint.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> LiveMint </span></a></div>
+                            <div class="timeline-content">
+                                <p class="description4">
+                                    {% for blog in bizz_livemint%}
+                                    {{blog.LiveMint|safe}}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
+                            <a href="https://www.business-standard.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Business Standard </span></a></div>
+                            <div class="timeline-content">
+                                <p class="description4">
+                                    {% for blog in bizz_business%}
+                                    {{blog.BusinessStandard|safe}}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
 
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--</div>-->
-
-<!--{% endblock %}-->
+{% endblock %}
