@@ -19,8 +19,8 @@ def index(request):
     return render(request, "index.html", {"firstpostnews": hover,
                                                   "htnews": hover1,
                                                   "itoday": hover2,
-                                                  "scroll": hover4,
                                                   "TOI": hover3,
+                                                  "scroll": hover4,
                                                   "NDTV": hover5,
                                                   })
 def r2():
@@ -53,21 +53,23 @@ def r2():
         Product_container1 = container1.find("div", {"class": "bigstory-h2"})
         Product_Name1 = Product_container1.text.strip()
 
-    req = Request('https://www.firstpost.com/', headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    page_soup = soup(webpage, "html.parser")
-    containers = page_soup.find("div", {"class": "featured-news"})
-    for container in containers:
-        Product_container = container.find("div", {"class": "overlay-content"})
-        Product_Name = Product_container.text.strip()
-
     req3 = Request('https://www.indiatoday.in/news.html', headers={'User-Agent': 'Mozilla/5.0'})
     webpage3 = urlopen(req3).read()
     page_soup3 = soup(webpage3, "html.parser")
     containers3 = page_soup3.find("div", {"class": "col-md-12 col-sm-12"})
     Product_Name3 = containers3.h3.text
-    newsheadlines_instance = NewsHeadlines.objects.create(NDTV=p6, Toi=p5, scroll=p4, HindustanTimes=Product_Name1,
-                                                        IndiaToday=Product_Name3)
+
+    req = Request('https://www.firstpost.com/', headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    page_soup = soup(webpage, "html.parser")
+    containers3 = page_soup.find("div", {"class": "main"})
+    containers4 = containers3.find("div", {"class": "news-item"})
+    Product_Name = containers4.h1.text
+    newsheadlines_instance = NewsHeadlines.objects.create(NDTV=p6, Toi=p5,
+                                                          scroll=p4, HindustanTimes=Product_Name1,
+                                                        IndiaToday=Product_Name3,
+                                                          Firstpost =Product_Name
+                                                        )
 r2()
 
 def blog(request):
