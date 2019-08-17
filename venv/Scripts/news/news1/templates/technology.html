@@ -2,78 +2,74 @@
 {% load static %}
 {% block content %}
 
-        <div class="container ">
-            <h1>Technology Headlines</h1>
-            <h3 id="demo" style = "color:blue;text-align: center;" ></h3>
-            <script>
-                var today = new Date();
-                var date = today.getDate() + '-' + (today.getMonth()+1)+'-' + today.getFullYear();
-                var time = today.getHours() + ":" + today.getMinutes()
-                var dateTime = date+' '+time;
-                document.getElementById("demo").innerHTML = dateTime;
-                </script>
-                <hr class="style5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-timeline7">
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href="https://www.91mobiles.com/hub/category/news-2/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> 91 Mobiles</span></a></div>
-                            <div class="timeline-content">
-                                <p class="description1">
-                                    {% for blog in 91mobiles%}
-                                         {{blog.Mobiles91|safe}}
-                                    {% endfor %}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href="https://www.cnet.com/news/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> CNET </span></a></div>
-                            <div class="timeline-content">
-                                <p class="description2">
-                                    {% for blog in tech_cnet %}
+    <!-- Page Layout here -->
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card  White ">
+          <div class="card-content ">
+            <span class="card-title">{% for blog in 91mobiles%}
+                                     {{blog.Mobiles91|safe}}
+                                        {% endfor %}
+            </span>
+            <p>91 Mobiles</p><br>
+            <div class="divider"></div>
+            <span class="card-title"> {% for blog in tech_cnet %}
                                             {{blog.CNET|safe}}
                                     {% endfor %}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                             <a  href="https://gadgets.ndtv.com/news"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> NDTV </span></a></div>
-                            <div class="timeline-content">
-                                <p class="description3">
-                                    {% for blog in tech_ndtv %}
-                                        {{blog.NDTV|safe}}
-                                    {% endfor %}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href = "https://www.theverge.com/tech"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Verge </span></a></div>
-                            <div class="timeline-content">
-                                <p class="description4">
-                                    {% for blog in tech_verge %}
-                                        {{blog.Verge|safe}}
-                                    {% endfor %}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-pen-fancy"></i>
-                            <a href= "https://www.techradar.com/"> <span style="border-radius: 20px;" class="btn btn-info btn-md"></i> Tech Radar </span></a></div>
-                            <div class="timeline-content">
-                                <p class="description4">
-                                    {% for blog in techradar %}
+            </span>
+            <p>CNET</p><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in techradar %}
                                         {{blog.TechRadar|safe}}
-                                    {% endfor %}
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
+            {% endblock %}
+            </span>
+            <p>Techradar.</p><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in tech_ndtv %}
+                                        {{blog.NDTV|safe}}{% endfor %}
+</span>
+            <p>NDTV</p><br>
+            <div class="divider"></div>
+              <span class="card-title">{% for blog in tech_verge %}
+                                        {{blog.Verge|safe}}
+
+                {% endfor %}</span>
+            <p> VERGE </p><br>
+            <div class="divider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="col s12 m4">
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
         </div>
 
-{% endblock %}
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+   {% endblock %}

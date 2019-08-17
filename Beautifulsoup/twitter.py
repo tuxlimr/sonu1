@@ -5,7 +5,8 @@ webpage2 = urlopen(req2).read()
 page_soup2 = soup(webpage2, "html.parser")
 containers2 = page_soup2.find("div", {"class": "trend-card"})
 containers2 = page_soup2.find("ol", {"class": "trend-card__list"})
+# print(containers2.prettify())
+# print(containers2.title.name)
 for link in containers2.find_all("a"):
-    p = link.text
     print(link.text)
 
