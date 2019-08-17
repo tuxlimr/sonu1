@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Page Layout here -->
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card  White ">
+          <div class="card-content ">
+            <span class="card-title">{% for blog in ent_firstpost %}
+                                    {{blog.FirstPost|safe}}
+                                 {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.firstpost.com/category/entertainment" target="_blank"> FirstPost</a>
+              <br><br>
+            <div class="divider"></div>
+            <span class="card-title">  {% for blog in ent_ibtimes %}
+                                        {{blog.IBTimes|safe}}
+                                    {% endfor %}
+            </span>
+           <a class= grey-text href="https://www.ibtimes.co.in/entertainment" target="_blank"> IBTimes</a>
+              <br><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in ent_indiatoday %}
+                                        {{blog.IndiaToday|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.indiatoday.in/movies" target="_blank"> India Today</a>
+            <br><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in ent_ndtv %}
+                                         {{blog.NDTV|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.ndtv.com/entertainment/" target="_blank"> NDTV</a>
+              <br><br>
+            <div class="divider"></div>
+              <span class="card-title">{% for blog in pinkvilla %}
+                                        {{blog.PinkVilla|safe}}
+                                    {% endfor %}
+
+                </span>
+           <a class= grey-text href="https://www.pinkvilla.com/entertainment" target="_blank"> PinkVilla</a>
+              <br><br>
+            <div class="divider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="col s12 m4">
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   {% endblock %}

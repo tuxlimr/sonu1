@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Page Layout here -->
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card  White ">
+          <div class="card-content ">
+            <span class="card-title">{% for blog in bizz_eco%}
+                                    {{blog.EconomicTimes|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://economictimes.indiatimes.com/" target="_blank"> Economic Times</a>
+              <br><br>
+            <div class="divider"></div>
+            <span class="card-title"> {% for blog in bizz_money %}
+                                    {{blog.MoneyControl|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.moneycontrol.com/" target="_blank"> Money Control </a>
+              <br><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in bizz_livemint%}
+                                    {{blog.LiveMint|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.livemint.com/" target="_blank"> LiveMint</a>
+              <br><br>
+            <div class="divider"></div>
+            <span class="card-title">{% for blog in bizz_business%}
+                                    {{blog.BusinessStandard|safe}}
+                                    {% endfor %}
+            </span>
+            <a class= grey-text href="https://www.business-standard.com/" target="_blank"> Business Standard</a>
+              <br><br>
+            <div class="divider"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="col s12 m4">
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+
+        <div class="card cyan">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+   {% endblock %}
