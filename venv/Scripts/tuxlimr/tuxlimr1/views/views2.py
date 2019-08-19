@@ -2,28 +2,34 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from bs4 import BeautifulSoup as soup
 from urllib.request import Request, urlopen
-import sys
-sys.path.append("..")
 from ..models import NewsHeadlines
+from ..models import twitter
 from ..models import Blog
 import threading
-
+import sys
+sys.path.append("..")
+import json
 def index(request):
     # return render(request,"index.html")
     x = len(NewsHeadlines.objects.all())
+    k = len(twitter.objects.all())
     hover = NewsHeadlines.objects.values('Firstpost')[(x - 1):x]
     hover1 = NewsHeadlines.objects.values('HindustanTimes')[(x - 1):x]
     hover2 = NewsHeadlines.objects.values('IndiaToday')[(x - 1):x]
     hover3 = NewsHeadlines.objects.values('Toi')[(x - 1):x]
     hover4 = NewsHeadlines.objects.values('scroll')[(x - 1):x]
     hover5 = NewsHeadlines.objects.values('NDTV')[(x - 1):x]
+    hover6 = twitter.objects.values('twitter')[(k - 1):k]
+    print(hover6)
     return render(request, "index.html", {"firstpostnews": hover,
                                                   "htnews": hover1,
                                                   "itoday": hover2,
                                                   "TOI": hover3,
                                                   "scroll": hover4,
                                                   "NDTV": hover5,
+                                          "twitter_trends": hover6
                                                   })
+
 def r2():
     threading.Timer(900.0, r2).start()
     req6 = Request('https://www.ndtv.com/', headers={'User-Agent': 'Mozilla/5.0'})
@@ -71,6 +77,18 @@ def r2():
                                                         IndiaToday=Product_Name3,
                                                           Firstpost =Product_Name
                                                         )
+    req_twitter = Request('https://trends24.in/india/', headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req_twitter).read()
+    page_soup = soup(webpage, "html.parser")
+    containers3 = page_soup.find("div", {"class": "trend-card"})
+    containers4 = containers3.find("ol", {"class": "trend-card__list"})
+    list = []
+    for link in containers4.find_all("a"):
+        px = (link.text)
+        list.append(px)
+    list = list
+    t = "<br>".join(list)
+    twitter_instance = twitter.objects.create(twitter=t)
 r2()
 
 def blog(request):
